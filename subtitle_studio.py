@@ -1,5 +1,7 @@
 """SubtitleStudio - offline English/Sinhala subtitle generator, editor and burner.
-Stack: PySide6 (UI), faster-whisper (local speech recognition), FFmpeg (audio/video/subtitle rendering)."""
+Stack: PySide6 (UI), faster-whisper (local speech recognition), FFmpeg (audio/video/subtitle rendering).
+© Vibe coded by https://github.com/GH0STH4CKER using Claude"""
+
 import sys, os, json, time, shutil, tempfile, subprocess
 from dataclasses import dataclass
 from pathlib import Path
