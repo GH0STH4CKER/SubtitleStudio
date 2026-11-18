@@ -14,6 +14,8 @@ A Windows desktop application for generating, editing, styling, and exporting su
 <p align="center">
   <strong>Windows 10 / 11 · 64-bit</strong>
 </p>
+<img width="1919" height="1107" alt="SubtitleStudio_SS" src="https://github.com/user-attachments/assets/7b78be38-abbf-4a91-bd8e-734f591d9b85" />
+
 
 ## ✨ Features
 
