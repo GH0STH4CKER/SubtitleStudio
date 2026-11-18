@@ -15,12 +15,6 @@ A Windows desktop application for generating, editing, styling, and exporting su
   <strong>Windows 10 / 11 · 64-bit</strong>
 </p>
 
-## 📸 Screenshot
-
-<p align="center">
-  <img src="docs/SubtitleStudio.png" alt="SubtitleStudio application screenshot" width="100%">
-</p>
-
 ## ✨ Features
 
 - 🎥 Import videos in MP4, MKV, MOV, AVI, and M4V formats.
