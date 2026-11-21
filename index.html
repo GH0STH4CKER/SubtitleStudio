@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SubtitleStudio v3.0 — Offline English & Sinhala AI Subtitle Generator</title>
+  <link rel="icon" type="image/png" href="SubtitleStudio_Icon.png" />
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter & JetBrains Mono -->
@@ -66,7 +67,6 @@
         <img
           src="SubtitleStudio_Icon.png"
           alt="SubtitleStudio Icon"
-          onerror="this.onerror=null;this.src='https://placehold.co/72x72/0b0e17/38bdf8?text=SS';"
           class="w-9 h-9 rounded-xl object-contain shadow-lg shadow-sky-500/20 transition-transform group-hover:scale-105"
         />
         <div class="flex items-center gap-2">
@@ -88,7 +88,9 @@
       <!-- GitHub CTA -->
       <div class="flex items-center gap-3">
         <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-[#6b46f6] hover:bg-[#5935e3] shadow-lg shadow-[#6b46f6]/30 transition-all">
-          <i data-lucide="github" class="w-4 h-4"></i>
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
           <span>Download on GitHub</span>
         </a>
       </div>
@@ -105,13 +107,34 @@
           <span>100% Offline Desktop App • English (Whisper) & Sinhala (SinhaSpeech)</span>
         </div>
 
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-5 leading-[1.1]">
+          Offline English &amp; Sinhala Subtitles, Built on Your PC
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-8">
+          Generate, edit, style, and hardcode subtitles directly into your videos with zero cloud uploads. Powered locally by OpenAI Whisper and SinhaSpeech.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center gap-4">
+          <a href="https://github.com/GH0STH4CKER/SubtitleStudio/releases" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-[#6b46f6] hover:bg-[#5935e3] text-white shadow-lg shadow-[#6b46f6]/30 transition-all hover:-translate-y-0.5">
+            <i data-lucide="download" class="w-5 h-5"></i>
+            <span>Download Windows Installer</span>
+          </a>
+          <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/15 transition-all">
+            <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+            </svg>
+            <span>GitHub Repository</span>
+          </a>
+        </div>
+      </div>
+
       <!-- Exact Unmodified Screenshot Showcase (SubtitleStudio_SS.png) -->
       <div class="max-w-[1220px] mx-auto">
         <div class="rounded-2xl shadow-[0_28px_80px_rgba(0,0,0,0.65)] border border-slate-700/80 overflow-hidden bg-[#0f1422]">
           <img
             src="SubtitleStudio_SS.png"
-            alt="SubtitleStudio v3.0 Desktop Application Screenshot"
-            onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/f3f5fc/1e293b?text=Place+SubtitleStudio_SS.png+in+the+same+folder+as+index.html';"
+            alt="SubtitleStudio v3.0 Desktop Interface"
             class="w-full h-auto block select-none"
           />
         </div>
@@ -261,37 +284,37 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-7">
             <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/30 mb-4">
-              OPEN SOURCE • v3.0
+              STANDALONE WINDOWS INSTALLER • v3.0
             </span>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
-              Start Generating Subtitles on Your PC
+              Ready-to-Run Windows Setup — Zero Python Required
             </h2>
             <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
-              Download SubtitleStudio from GitHub. English Whisper models (<code class="text-sky-300">small</code>, <code class="text-sky-300">medium</code>, <code class="text-sky-300">large-v3</code>) work right away, while Sinhala <code class="text-purple-300">SinhaSpeech (run12)</code> automatically downloads and converts on first use.
+              Install SubtitleStudio using the standalone Windows installer (<code class="text-sky-300">.exe</code>) with everything bundled out of the box—no Python, command line, or manual dependencies needed. Both English <strong class="text-white">Whisper</strong> models and Sinhala <strong class="text-white">SinhaSpeech (run12)</strong> automatically download once inside the app when selected.
             </p>
 
-            <!-- SinhaSpeech Dependency Box -->
-            <div class="p-4 rounded-2xl bg-[#090c14] border border-white/10 mb-6">
-              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
-                <span>Optional dependency for Sinhala (SinhaSpeech) models:</span>
-                <button type="button" onclick="copyPipCommand()" id="copy-pip-btn" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center gap-1">
-                  <i data-lucide="copy" class="w-3.5 h-3.5"></i>
-                  <span id="copy-pip-label">Copy</span>
-                </button>
+            <!-- Standalone Setup Highlights -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7">
+              <div class="flex items-center gap-2.5 p-3 rounded-2xl bg-[#090c14]/90 border border-white/10 text-xs sm:text-sm text-slate-200">
+                <i data-lucide="package-check" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <span>Self-contained Windows setup</span>
               </div>
-              <code id="pip-cmd" class="font-mono text-xs sm:text-sm text-emerald-400 block">
-                pip install transformers torch
-              </code>
+              <div class="flex items-center gap-2.5 p-3 rounded-2xl bg-[#090c14]/90 border border-white/10 text-xs sm:text-sm text-slate-200">
+                <i data-lucide="cloud-download" class="w-4 h-4 text-sky-400 shrink-0"></i>
+                <span>One-click in-app model download</span>
+              </div>
             </div>
 
             <div class="flex flex-wrap items-center gap-3.5">
-              <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-[#6b46f6] hover:bg-[#5935e3] text-white shadow-lg shadow-[#6b46f6]/30 transition-all hover:-translate-y-0.5">
-                <i data-lucide="github" class="w-5 h-5"></i>
-                View Repository on GitHub
+              <a href="https://github.com/GH0STH4CKER/SubtitleStudio/releases" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-[#6b46f6] hover:bg-[#5935e3] text-white shadow-lg shadow-[#6b46f6]/30 transition-all hover:-translate-y-0.5">
+                <i data-lucide="download" class="w-5 h-5"></i>
+                Download Windows Installer
               </a>
-              <a href="https://github.com/GH0STH4CKER/SubtitleStudio/releases" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-white/5 hover:bg-white/10 text-slate-200 border border-white/15 transition-all">
-                <i data-lucide="download" class="w-4 h-4 text-sky-400"></i>
-                Releases
+              <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-5 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-white/5 hover:bg-white/10 text-slate-200 border border-white/15 transition-all">
+                <svg class="w-5 h-5 fill-current text-white shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+                </svg>
+                <span>View on GitHub</span>
               </a>
             </div>
           </div>
@@ -300,7 +323,7 @@
           <div class="lg:col-span-5 bg-[#0b0e17]/90 rounded-2xl p-5 border border-white/10 space-y-4">
             <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
               <i data-lucide="cpu" class="w-4 h-4 text-indigo-400"></i>
-              Supported AI Speech Models
+              Built-In Offline Speech Engines
             </h3>
 
             <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
@@ -319,7 +342,7 @@
                 <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-500/15 text-purple-300">Sinhala (සිංහල)</span>
               </div>
               <p class="text-xs text-slate-400">
-                Dedicated Sinhala speech recognition (<code class="text-slate-200">run12</code> recommended for highest accuracy).
+                Dedicated Sinhala speech recognition (<code class="text-slate-200">run12</code> recommended)—automatically fetched on first use.
               </p>
             </div>
 
@@ -345,7 +368,6 @@
         <img
           src="SubtitleStudio_Icon.png"
           alt="SubtitleStudio Icon"
-          onerror="this.onerror=null;this.src='https://placehold.co/64x64/0b0e17/38bdf8?text=SS';"
           class="w-8 h-8 rounded-lg object-contain"
         />
         <div>
@@ -355,9 +377,11 @@
       </div>
 
       <div class="flex items-center gap-6 text-xs sm:text-sm text-slate-400">
-        <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          GH0STH4CKER/SubtitleStudio
+        <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-2">
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span>GH0STH4CKER/SubtitleStudio</span>
         </a>
         <a href="https://github.com/GH0STH4CKER/SubtitleStudio/releases" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
           Releases
@@ -382,23 +406,6 @@
     }, { threshold: 0.1 });
 
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-    // Copy pip command helper
-    function copyPipCommand() {
-      const cmd = document.getElementById('pip-cmd').textContent.trim();
-      const temp = document.createElement('textarea');
-      temp.value = cmd;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand('copy');
-      document.body.removeChild(temp);
-
-      const label = document.getElementById('copy-pip-label');
-      label.textContent = 'Copied!';
-      setTimeout(() => {
-        label.textContent = 'Copy';
-      }, 1800);
-    }
   </script>
 </body>
 </html>
