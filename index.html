@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SubtitleStudio v3.0 — Offline English & Sinhala AI Subtitle Generator</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            brand: {
+              purple: '#6b46f6',
+              purpleHover: '#5935e3',
+              indigo: '#4f46e5',
+              surface: '#f3f5fc',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    .hero-bg {
+      background-color: #0b0e17;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(107, 70, 246, 0.24) 0%, transparent 55%),
+        radial-gradient(circle at 85% 25%, rgba(14, 165, 233, 0.14) 0%, transparent 45%),
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: all 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-[#0b0e17] text-slate-100 font-sans antialiased selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden">
+
+  <!-- Navigation Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#0b0e17]/85 backdrop-blur-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img
+          src="SubtitleStudio_Icon.png"
+          alt="SubtitleStudio Icon"
+          onerror="this.onerror=null;this.src='https://placehold.co/72x72/0b0e17/38bdf8?text=SS';"
+          class="w-9 h-9 rounded-xl object-contain shadow-lg shadow-sky-500/20 transition-transform group-hover:scale-105"
+        />
+        <div class="flex items-center gap-2">
+          <span class="font-bold text-lg tracking-tight text-white">SubtitleStudio</span>
+          <span class="px-2 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+            v3.0
+          </span>
+        </div>
+      </a>
+
+      <!-- Nav Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <a href="#ui-showcase" class="hover:text-white transition-colors">Interface</a>
+        <a href="#features" class="hover:text-white transition-colors">Features</a>
+        <a href="#workflow" class="hover:text-white transition-colors">Workflow</a>
+        <a href="#setup" class="hover:text-white transition-colors">Setup & Models</a>
+      </nav>
+
+      <!-- GitHub CTA -->
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-white bg-[#6b46f6] hover:bg-[#5935e3] shadow-lg shadow-[#6b46f6]/30 transition-all">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          <span>Download on GitHub</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section & Exact Desktop UI Showcase -->
+  <section id="ui-showcase" class="hero-bg pt-12 pb-20 sm:pt-16 sm:pb-28 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Hero Copy -->
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-medium text-slate-300 mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          <span>100% Offline Desktop App • English (Whisper) & Sinhala (SinhaSpeech)</span>
+        </div>
+
+      <!-- Exact Unmodified Screenshot Showcase (SubtitleStudio_SS.png) -->
+      <div class="max-w-[1220px] mx-auto">
+        <div class="rounded-2xl shadow-[0_28px_80px_rgba(0,0,0,0.65)] border border-slate-700/80 overflow-hidden bg-[#0f1422]">
+          <img
+            src="SubtitleStudio_SS.png"
+            alt="SubtitleStudio v3.0 Desktop Application Screenshot"
+            onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/f3f5fc/1e293b?text=Place+SubtitleStudio_SS.png+in+the+same+folder+as+index.html';"
+            class="w-full h-auto block select-none"
+          />
+        </div>
+
+        <!-- Caption below UI Showcase -->
+        <p class="text-center text-xs text-slate-400 mt-4">
+          SubtitleStudio v3.0 Desktop Interface — Clean, distraction-free local workspace for Windows.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Highlights / Features Section -->
+  <section id="features" class="py-20 sm:py-28 border-b border-white/10 bg-[#0d111c]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-indigo-500/15 text-indigo-300 border border-indigo-500/25 mb-3">
+          CORE CAPABILITIES
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          Built for Private, Accurate Local Subtitling
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Everything runs directly on your machine—combining offline speech recognition with intuitive editing and direct video export.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-indigo-500/40 transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center mb-5">
+            <i data-lucide="shield-check" class="w-6 h-6 text-emerald-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">100% Local &amp; Private</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Speech is recognised directly on your own PC. Your videos and audio never leave your computer—zero cloud uploads or usage limits.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sky-500/40 transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-sky-500/15 border border-sky-500/30 flex items-center justify-center mb-5">
+            <i data-lucide="languages" class="w-6 h-6 text-sky-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">English &amp; Sinhala AI Models</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Choose <strong class="text-slate-200">Whisper</strong> (<code class="text-sky-300">small</code>, <code class="text-sky-300">medium</code>, <code class="text-sky-300">large-v3</code>) for English or <strong class="text-slate-200">SinhaSpeech</strong> (<code class="text-sky-300">run12</code>) for high-accuracy Sinhala transcription.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-purple-500/40 transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-purple-500/15 border border-purple-500/30 flex items-center justify-center mb-5">
+            <i data-lucide="music" class="w-6 h-6 text-purple-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Music &amp; Fast Modes</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Keep vocals over background music with <span class="text-slate-200">Music / singing mode</span>, or switch on <span class="text-slate-200">Fast mode</span> when you need quicker turnarounds.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="p-6 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-amber-500/40 transition-all reveal">
+          <div class="w-12 h-12 rounded-2xl bg-amber-500/15 border border-amber-500/30 flex items-center justify-center mb-5">
+            <i data-lucide="film" class="w-6 h-6 text-amber-400"></i>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Edit, Style &amp; Export MP4</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Refine any recognized lines in the <span class="text-slate-200">Subtitles</span> tab, customize visual appearance in <span class="text-slate-200">Style</span>, and export finished MP4 videos or subtitle files.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-Step Workflow Section Mirroring the App UI -->
+  <section id="workflow" class="py-20 sm:py-28 border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-sky-500/15 text-sky-300 border border-sky-500/25 mb-3">
+          4-STEP GUIDED WORKFLOW
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight mb-4">
+          From Raw Video to Hardcoded MP4 in Four Steps
+        </h2>
+        <p class="text-slate-400 text-base sm:text-lg">
+          Follow the streamlined pipeline built right into SubtitleStudio's top navigation bar.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+        <!-- Step 1 -->
+        <div class="p-6 rounded-3xl bg-[#111625] border border-indigo-500/40 relative">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-[#6b46f6] text-white text-xs font-semibold mb-5">
+            <span>1</span>
+            <span>Import</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Drop Your Video</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Drag and drop <strong class="text-slate-200">MP4, MKV, MOV, or AVI</strong> files anywhere in the window, or click <span class="text-indigo-300">Import Video</span>.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="p-6 rounded-3xl bg-[#111625] border border-white/10 relative">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/10 text-slate-200 text-xs font-semibold mb-5">
+            <span>2</span>
+            <span>Generate</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Run Local AI Speech</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Pick your model (<span class="text-slate-200">Whisper</span> or <span class="text-slate-200">SinhaSpeech</span>), select Auto or specific spoken language, and generate subtitles offline.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="p-6 rounded-3xl bg-[#111625] border border-white/10 relative">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/10 text-slate-200 text-xs font-semibold mb-5">
+            <span>3</span>
+            <span>Edit &amp; Style</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Polish Text &amp; Look</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Fix any transcription mistakes in the <span class="text-slate-200">Subtitles</span> tab and customize fonts, colors, and placement in the <span class="text-slate-200">Style</span> tab.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="p-6 rounded-3xl bg-[#111625] border border-white/10 relative">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/10 text-slate-200 text-xs font-semibold mb-5">
+            <span>4</span>
+            <span>Export</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Export MP4 or Captions</h3>
+          <p class="text-sm text-slate-400 leading-relaxed">
+            Render your styled subtitles directly into a ready-to-share <strong class="text-slate-200">MP4</strong> video or export clean subtitle tracks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Start / Setup & Download Section -->
+  <section id="setup" class="py-20 sm:py-28">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 reveal">
+      <div class="rounded-3xl p-8 sm:p-12 bg-gradient-to-br from-[#13192b] via-[#101524] to-[#1a1638] border border-indigo-500/30 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/30 mb-4">
+              OPEN SOURCE • v3.0
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight mb-4">
+              Start Generating Subtitles on Your PC
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6">
+              Download SubtitleStudio from GitHub. English Whisper models (<code class="text-sky-300">small</code>, <code class="text-sky-300">medium</code>, <code class="text-sky-300">large-v3</code>) work right away, while Sinhala <code class="text-purple-300">SinhaSpeech (run12)</code> automatically downloads and converts on first use.
+            </p>
+
+            <!-- SinhaSpeech Dependency Box -->
+            <div class="p-4 rounded-2xl bg-[#090c14] border border-white/10 mb-6">
+              <div class="flex items-center justify-between text-xs text-slate-400 mb-2">
+                <span>Optional dependency for Sinhala (SinhaSpeech) models:</span>
+                <button type="button" onclick="copyPipCommand()" id="copy-pip-btn" class="text-sky-400 hover:text-sky-300 font-medium inline-flex items-center gap-1">
+                  <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                  <span id="copy-pip-label">Copy</span>
+                </button>
+              </div>
+              <code id="pip-cmd" class="font-mono text-xs sm:text-sm text-emerald-400 block">
+                pip install transformers torch
+              </code>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3.5">
+              <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-[#6b46f6] hover:bg-[#5935e3] text-white shadow-lg shadow-[#6b46f6]/30 transition-all hover:-translate-y-0.5">
+                <i data-lucide="github" class="w-5 h-5"></i>
+                View Repository on GitHub
+              </a>
+              <a href="https://github.com/GH0STH4CKER/SubtitleStudio/releases" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3.5 rounded-2xl text-sm sm:text-base font-semibold bg-white/5 hover:bg-white/10 text-slate-200 border border-white/15 transition-all">
+                <i data-lucide="download" class="w-4 h-4 text-sky-400"></i>
+                Releases
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Model Summary Card -->
+          <div class="lg:col-span-5 bg-[#0b0e17]/90 rounded-2xl p-5 border border-white/10 space-y-4">
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2">
+              <i data-lucide="cpu" class="w-4 h-4 text-indigo-400"></i>
+              Supported AI Speech Models
+            </h3>
+
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-white text-sm">OpenAI Whisper</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-sky-500/15 text-sky-300">English &amp; Auto</span>
+              </div>
+              <p class="text-xs text-slate-400">
+                Supports <code class="text-slate-200">small (≈ 480 MB)</code>, <code class="text-slate-200">medium</code>, and <code class="text-slate-200">large-v3</code> locally on CPU or GPU.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-white text-sm">SinhaSpeech</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-purple-500/15 text-purple-300">Sinhala (සිංහල)</span>
+              </div>
+              <p class="text-xs text-slate-400">
+                Dedicated Sinhala speech recognition (<code class="text-slate-200">run12</code> recommended for highest accuracy).
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-xl bg-white/[0.03] border border-white/10">
+              <div class="flex items-center justify-between mb-1">
+                <span class="font-semibold text-white text-sm">Input &amp; Output Formats</span>
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-300">Video + Subs</span>
+              </div>
+              <p class="text-xs text-slate-400">
+                Import <code class="text-slate-200">MP4 · MKV · MOV · AVI</code> and export styled <code class="text-slate-200">MP4</code> videos or subtitle tracks.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/10 bg-[#080a11] py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img
+          src="SubtitleStudio_Icon.png"
+          alt="SubtitleStudio Icon"
+          onerror="this.onerror=null;this.src='https://placehold.co/64x64/0b0e17/38bdf8?text=SS';"
+          class="w-8 h-8 rounded-lg object-contain"
+        />
+        <div>
+          <span class="font-bold text-white text-sm">SubtitleStudio v3.0</span>
+          <p class="text-xs text-slate-400">Created by Dimuth De Zoysa</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-6 text-xs sm:text-sm text-slate-400">
+        <a href="https://github.com/GH0STH4CKER/SubtitleStudio" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors inline-flex items-center gap-1.5">
+          <i data-lucide="github" class="w-4 h-4"></i>
+          GH0STH4CKER/SubtitleStudio
+        </a>
+        <a href="https://github.com/GH0STH4CKER/SubtitleStudio/releases" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+          Releases
+        </a>
+        <a href="https://github.com/GH0STH4CKER/SubtitleStudio/issues" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">
+          Issues
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Scroll reveal animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+    // Copy pip command helper
+    function copyPipCommand() {
+      const cmd = document.getElementById('pip-cmd').textContent.trim();
+      const temp = document.createElement('textarea');
+      temp.value = cmd;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand('copy');
+      document.body.removeChild(temp);
+
+      const label = document.getElementById('copy-pip-label');
+      label.textContent = 'Copied!';
+      setTimeout(() => {
+        label.textContent = 'Copy';
+      }, 1800);
+    }
+  </script>
+</body>
+</html>
